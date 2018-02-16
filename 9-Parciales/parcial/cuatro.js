@@ -23,10 +23,7 @@ function Mostrar()
             resultado = (dato1+dato2)
         }
         
-        document.write (resultado);
-    }
-
         
-
-   
+    }
+    document.write (resultado); 
 }
