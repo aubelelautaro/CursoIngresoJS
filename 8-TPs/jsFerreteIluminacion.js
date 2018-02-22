@@ -16,48 +16,57 @@ function CalcularPrecio ()
     var marca;
     var precioFinal;
     var precioBruto;
-    var porcentaje;
+    var IIBB;
 
     cantidad = document.getElementById("Cantidad").value;
     marca = document.getElementById("Marca").value;
 
-    porcentaje = 0;
     lamparitas = 35;
 
     precioBruto = lamparitas*cantidad;
     
     if (cantidad>5) 
     {
-        porcentaje = 0.5;
+        descuento = precioBruto * 0.5;
     }
-    else{
-        if (cantidad == 5){
-            if (marca=="ArgentinaLuz"){
-                    porcentaje = 0.4;
-            }
-            else{
-                porcentaje = 0.3;
-            }
-
-            if (cantidad == 4){
-                if (marca=="ArgentinaLuz"){
-                        porcentaje = 0.;
+        else if (cantidad == 5 && marca == "ArgentinaLuz"){
+                descuento = precioBruto * 0.4;
                 }
-                else{
-                    porcentaje = 0.3;
-            } 
-        }  
-    }
-
-    descuento = precioBruto*porcentaje;
+        else if (cantidad == 5) {
+                descuento = precioBruto * 0.3;
+        }
+        else if (cantidad ==4) {
+            if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") {
+                descuento = precioBruto * 0.25;
+            }
+            else {
+                descuento = precioBruto * 0.20;
+            }
+            if (cantidad == 3) 
+                {
+                switch (marca) {
+                    case "ArgentinaLuz":
+                        descuento = precioBruto * 0.15;
+                        break;
+                    case "FelipeLamparas":
+                        descuento = precioBruto * 0.10;
+                        break;
+                    default:
+                        descuento = precioBruto * 0.05;
+                        break;
+                }
+            }                
+        }
     
-    precioFinal = precioBruto*descuento;
-
+    precioFinal = precioBruto - descuento;
+    
     if (precioFinal>120) 
     {
-        precioFinal = precioFinal*1.1;
+        IIBB = precioFinal * 0.1;
+        precioFinal = precioFinal + IIBB
+        alert ("Usted pago " + IIBB + " de IIBB")
     }
+
     document.getElementById("precioDescuento").value = precioFinal;
 
-     
 }
