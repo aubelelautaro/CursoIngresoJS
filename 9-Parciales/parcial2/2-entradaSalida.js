@@ -1,7 +1,12 @@
 //Debemos lograr mostrar un mensaje al presionar el botón  'MOSTRAR'.
 function Mostrar()
 {
-	alert("Funciona 2-EntradaSalida");
+	var importe;
 	
-}
+	importe = prompt ("Ingrese importe");
 
+	importe = parseInt (importe);
+
+	document.getElementById("importe").value = importe*1.21 ;
+
+}
