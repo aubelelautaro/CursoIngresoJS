@@ -1,7 +1,9 @@
 function Mostrar()
 {
+    var numero;
 
-
-
-
-}//FIN DE LA FUNCIÓN
+    for (;numero != 9;)
+    {    
+        numero = prompt ("Ingrese numero");
+    }
+}
