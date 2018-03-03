@@ -1,8 +1,8 @@
 //Debemos lograr mostrar un mensaje al presionar el botón  'MOSTRAR'.
 function Mostrar()
 {
-	var maximo = 0;
-	var minimo = 0;
+	var maximo;
+	var minimo;
 	var importe;
 	var contador=0;
 
@@ -11,25 +11,29 @@ function Mostrar()
 		
 		importe = prompt ("Ingrese importe de ventas");
 		importe = parseInt (importe);
-		while (importe < 0) {
-			importe = prompt ("Ingrese importe de ventas");
+		while (importe <= 0 || isNaN (importe))
+		{
+			importe = prompt ("Ingrese nuevamente el importe");
 			importe = parseInt (importe);
 		}
-		contador++;
 	
-		if (importe < 0 || importe != NaN) {
-			alert ("Error");
-			contador--;	
+		if (contador == 0)
+		{
+			maximo = importe;
+			minimo = importe;
 		}
-		else {
-			if (importe > maximo) {
-				maximo = importe
+		else
+		{
+			if (importe < minimo)
+			{
+				minimo = importe;
 			}
-			else {
-				importe < minimo
-				minimo = importe
+			if (importe > maximo) 
+			{
+				maximo = importe;	
 			}
-		}
+		}	
+		contador++;
 	}
 	alert ("El mayor importe es : " + maximo + " y el importe menor es : " + minimo);
 }
