@@ -1,3 +1,18 @@
+
+                    //switch (marca) {
+                    //    case "ArgentinaLuz":
+                    //        descuento = precioBruto * 0.15;
+                    //        break;
+                    //    case "FelipeLamparas":
+                    //        descuento = precioBruto * 0.10;
+                    //        break;
+                    //    default:
+                    //        descuento = precioBruto * 0.05;
+                    //        break;
+                    
+
+
+
 /*4.	Para el departamento de iluminación:
 Tomando en cuenta que todas las lámparas están en oferta al mismo precio de $35 pesos final.
 A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
@@ -41,23 +56,24 @@ function CalcularPrecio ()
             }
             else {
                 descuento = precioBruto * 0.20;
-            }
+            }           
             if (cantidad == 3) 
                 {
-                switch (marca) {
-                    case "ArgentinaLuz":
+                    if (marca == "ArgentinaLuz") {
                         descuento = precioBruto * 0.15;
-                        break;
-                    case "FelipeLamparas":
-                        descuento = precioBruto * 0.10;
-                        break;
-                    default:
-                        descuento = precioBruto * 0.05;
-                        break;
-                }
-            }                
-        }
-    
+                    }
+                    else 
+                    {
+                        if (marca == "FelipeLamparas") {
+                            descuento = precioBruto * 0.1;
+                        }
+                        else 
+                        {
+                            descuento = precioBruto * 0.05;
+                        }
+                    }
+                }                                      
+            }        
     precioFinal = precioBruto - descuento;
     
     if (precioFinal>120) 
