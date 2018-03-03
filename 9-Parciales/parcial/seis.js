@@ -7,11 +7,10 @@ function Mostrar()
 
     while (contador < 24) 
     {
-        contador++;
         ventas = prompt ("Importe de Ventas");
         ventas = parseInt (ventas);
 
-        if (ventas < 0 || ventas == NaN) {
+        if (ventas < 0 || isNaN (ventas)) {
             alert ("Error");
             contador--;
         }
@@ -25,6 +24,7 @@ function Mostrar()
                 minimo = ventas
             }
         }
+        contador++;
     }
     alert ("El importe mayor de ventas es : " + maximo + " y el importe menor es : " + minimo);
 }

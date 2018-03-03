@@ -7,9 +7,8 @@ function Mostrar()
     var promedioNotas;
 
 
-    while (contador == 100) 
+    while (contador < 100) 
     {
-        contador++;
         nota = prompt ("Ingrese Nota");
         nota = parseInt (nota);
         while (nota <= 10 && nota > 0) {
@@ -22,7 +21,7 @@ function Mostrar()
                 sexo = prompt ("Ingrese de nuevo F o M");
             }
         }
+        contador++;
     }
     
-
 }
